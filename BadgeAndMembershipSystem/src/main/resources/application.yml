@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: Badge-and-Membership-System
+
+  datasource:
+    url: jdbc:sqlserver://cs544.cs.miu.edu:1433;databaseName=CS544-202303-02;encrypt=true;trustServerCertificate=true;
+    username: CS544-202303-02
+    password: c66952ba-0bd6-412c-b545-65ef7c4c7635
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    hikari:
+      maximumPoolSize: 10
+
+  jpa:
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.SQLServer2016Dialect
+        show-sql: true
+        format_sql: true
+    defer-datasource-initialization: true
+  sql:
+    init:
+      mode: always
+
+## jwt configs ##
+jwt:
+  secret: secret
+  expiration: 86400000
+
+## maintaining logs ##
+
+#logging:
+#  file:
+#    name: application.log
