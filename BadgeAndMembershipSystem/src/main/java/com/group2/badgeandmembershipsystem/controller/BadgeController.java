@@ -22,6 +22,8 @@ public class BadgeController {
     public ResponseEntity<List<BadgeDTO>> getAllBadges() {
         return ResponseEntity.status(HttpStatus.OK).body(badgeService.findAll());
     }
+
+    // name: Simegnew
     @GetMapping("/{id}")
     public ResponseEntity<BadgeDTO> findById(@PathVariable String id) {
         return ResponseEntity.status(HttpStatus.OK).body(badgeService.findById(id));
